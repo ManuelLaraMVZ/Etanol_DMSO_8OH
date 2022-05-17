@@ -1,4 +1,4 @@
-Vehiculo,Tratamiento,n,mean,sd,
+Vehiculo,Tratamiento,n,mean,sd,ANOVA
 DMSO,Control,3,82500.00,1250.00,a
 DMSO,Vehicle,3,79166.67,1443.38,a
 DMSO,62.5 µM ,3,40416.67,721.69,b
