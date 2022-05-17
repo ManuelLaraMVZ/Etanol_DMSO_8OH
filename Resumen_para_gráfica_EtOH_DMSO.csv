@@ -1,0 +1,9 @@
+Vehiculo,Tratamiento,n,mean,sd,
+DMSO,Control,3,82500.00,1250.00,a
+DMSO,Vehicle,3,79166.67,1443.38,a
+DMSO,62.5 然 ,3,40416.67,721.69,b
+DMSO,125.0 然 ,3,45416.67,721.69,b
+EtOH,Control,3,82500.00,1250.00,a
+EtOH,Vehicle,3,79166.67,1443.38,b
+EtOH,62.5 然 ,3,42083.33,721.69,c
+EtOH,125.0 然 ,3,45833.33,721.69,d
