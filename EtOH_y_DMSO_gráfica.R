@@ -19,7 +19,7 @@ tiempos2_azul <- tiempos_azul
 tiempos2_azul$Vehiculo <- factor(tiempos2_azul$Vehiculo, 
                                  levels = c("DMSO", "EtOH")) #Convertimos el caracter en factor par apoder ordenar
 tiempos2_azul$Tratamiento<- factor(tiempos2_azul$Tratamiento, 
-                                   levels = c("Control", "Vehicle", "62.5 µM", "125.0 µM"))
+                                   levels = c("Control", "Vehicle", "62.5 ÂµM", "125.0 ÂµM"))
 head(tiempos2_azul)
 
 tiempos3 <-tiempos2_azul
@@ -33,7 +33,7 @@ graft <- tiempos3%>%
                        fill=Tratamiento))+
   geom_bar(stat = "identity", colour="black", size=.8)+
   theme_classic()+
-  facet_wrap(~Vehiculo, dir = "v")+
+  facet_wrap(~Vehiculo, dir = "v", ncol=2)+
   scale_fill_d3()+
   theme_bw()
 
@@ -48,7 +48,7 @@ marcasy <- seq(from=miny,
 
 
 graft2 <- graft+
-  scale_y_continuous(limits=c(miny,maxy), #colocamos los límites del eje y
+  scale_y_continuous(limits=c(miny,maxy), #colocamos los lÃ­mites del eje y
                      breaks=marcasy,
                      expand=c(0,0),
                      labels = comma)+
@@ -85,7 +85,7 @@ graft5 <- graft4+
 
 graft5
 
-#se agrega estadística
+#se agrega estadÃ­stica
 
 graft6 <- graft5+
   geom_text(aes(label=ANOVA),
@@ -93,14 +93,16 @@ graft6 <- graft5+
             nudge_y = 5000,      #respecto al eje y que tanto cambia
             size=6,
             face="bold")+
-  scale_fill_simpsons()
+  scale_fill_simpsons()+
+  theme( panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank())
 graft6
 
 ggsave(filename = "Concentraciones_EtOH_DMSO.png",
        plot = graft6,
        dpi = 600,
-       height = 7,
-       width = 7)
+       height = 5,
+       width = 9)
 
 #escala grises
 graft7 <- graft6+
@@ -110,6 +112,5 @@ graft7
 ggsave(filename = "Concentraciones_EtOH_DMSOgris.png",
        plot = graft7,
        dpi = 600,
-       height = 7,
-       width = 7)
-
+       height = 5,
+       width = 9)
